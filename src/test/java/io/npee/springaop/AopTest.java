@@ -2,10 +2,7 @@ package io.npee.springaop;
 
 import io.npee.springaop.order.OrderRepository;
 import io.npee.springaop.order.OrderService;
-import io.npee.springaop.order.aop.AspectV1;
-import io.npee.springaop.order.aop.AspectV2;
-import io.npee.springaop.order.aop.AspectV3;
-import io.npee.springaop.order.aop.AspectV4;
+import io.npee.springaop.order.aop.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
@@ -20,7 +17,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 //@Import(AspectV1.class)
 //@Import(AspectV2.class)
 //@Import(AspectV3.class)
-@Import(AspectV4.class)
+//@Import(AspectV4.class)
+@Import({AspectV5.LogAspect.class, AspectV5.TxAspect.class})
 public class AopTest {
 
     @Autowired
